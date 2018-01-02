@@ -1,0 +1,21 @@
+<div>
+	
+	<mat-button-toggle (click)="showCart = !showCart" mat-raised-button> Ver Carro ( Productos en carro : {{ cart.cartItems.length }} )</mat-button-toggle>
+
+	<form *ngIf="showCart">
+		<ul class="cart-list">
+			<li *ngFor="let item of cart.cartItems">
+				<div>
+					Producto : {{ item.product.name }} X {{ item.amount }}
+				</div>
+				<div>
+					Precio : $ {{ item.product.price }}
+				</div>
+				<button (click)="removeFromCart(item)" mat-raised-button> Remover </button>
+			</li>
+		</ul>
+	<div class="cart-total">
+		Total: $ {{ cart.total }}
+	</div>
+	</form>
+</div>
