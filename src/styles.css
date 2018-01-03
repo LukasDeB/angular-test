@@ -1,23 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
 .container {
 	display: flex;
 	justify-content: space-between;
-	
 	padding: 25px;
 }
-
 .cart-list {
 	list-style: none;
 	padding: 0;
 }
-
 .cart-list li {
 	padding-top: 20px;
 	text-align: center;
 }
-
 .cart-total{
 	display: flex;
 	align-items: center;
@@ -27,14 +22,11 @@
 	background-color: #ced0d0;
 
 }
-
 .product-selected {
 	display: flex;
 	flex-wrap: nowrap;
 }
-
 .product-details{
 	width: 40%;
 	padding-left: 50px;
-
 }

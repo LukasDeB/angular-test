@@ -1,29 +1,22 @@
 <form>
 	<mat-form-field>
-	  <mat-select [(ngModel)]="selectedProducto" placeholder="Lista de Productos" name="producto">
+	  <mat-select [(ngModel)]="selectedProduct" placeholder="Lista de Productos" name="producto">
 	    <mat-option *ngFor="let producto of products" [value]="producto">
 	      {{ producto.name }}
 	    </mat-option>
 	  </mat-select>
 	</mat-form-field>
-
-
-	<div *ngIf="selectedProducto" class="product-selected">
-		<img src="{{selectedProducto.image}}">
+	<div *ngIf="selectedProduct" class="product-selected">
+		<img src="{{selectedProduct.image}}">
 		<div class="product-details">
-			<h3>{{selectedProducto.name}}</h3>
+			<h3>{{selectedProduct.name}}</h3>
 			<p class="product-description">
-				{{selectedProducto.description}}
+				{{selectedProduct.description}}
 			</p>
 			<p>
-				Precio : $ {{selectedProducto.price}}
+				Precio : $ {{selectedProduct.price}}
 			</p>
-			<button (click)="addItemToCart(selectedProducto)" mat-raised-button>Agregar al Carro</button>
+			<button (click)="addItemToCart(selectedProduct)" mat-raised-button>Agregar al Carro</button>
 		</div>
-
-
-		
 	</div>
-
-	
 </form>

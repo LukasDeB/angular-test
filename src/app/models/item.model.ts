@@ -1,5 +1,4 @@
 export class Item {
-	
 	public id: number;
 	public name: string;
 	public description: string;
@@ -12,6 +11,5 @@ export class Item {
 		this.id = id;
 		this.price = price;
 		this.image = image;
-		
 	}
 }

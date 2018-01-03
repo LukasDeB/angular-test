@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
 import { ItemCartDataService } from '../../services/item-cart-data.service';
 import { Cart } from '../../models/cart.model';
 import { Item } from '../../models/item.model';
 import { CartItem } from '../../models/cartItem.model';
-
-
 
 @Component({
   selector: 'app-shoppingcart',
@@ -13,7 +10,6 @@ import { CartItem } from '../../models/cartItem.model';
   styleUrls: ['./shoppingcart.component.css']
 })
 export class ShoppingcartComponent implements OnInit {
-
   cart: Cart;
   showCart = false;
   
@@ -29,7 +25,6 @@ export class ShoppingcartComponent implements OnInit {
       }
       
       _itemCartService.item$.subscribe((data) => {
-
         let itemFound = this.cart.cartItems.find(i => i.product.id === data.product.id);
         if(!itemFound){
           this.cart.cartItems.push(data);
@@ -40,19 +35,13 @@ export class ShoppingcartComponent implements OnInit {
           this.cart.total += data.product.price;
         } 
         window.localStorage.setItem('SHOPPING-CART', JSON.stringify(this.cart));  
-        
       });    
-    
   }
 
   ngOnInit() {
-    
   }
-
   removeFromCart(item: CartItem){
-    
     let itemIndex = this.cart.cartItems.findIndex(i => i.product.id === item.product.id);
-
     if(this.cart.cartItems[itemIndex].amount > 1 ){
       this.cart.cartItems[itemIndex].amount -= 1;
       this.cart.total -= item.product.price;
@@ -62,6 +51,4 @@ export class ShoppingcartComponent implements OnInit {
     }
     window.localStorage.setItem('SHOPPING-CART', JSON.stringify(this.cart));
   }
-
-
 }

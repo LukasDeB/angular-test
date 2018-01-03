@@ -1,7 +1,6 @@
 import { Item } from './item.model';
 
 export class CartItem  {
-	
 	public product: Item;
 	public amount: number;
 
