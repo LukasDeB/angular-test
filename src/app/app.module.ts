@@ -13,6 +13,7 @@ import { ItemsComponent } from './components/items/items.component';
 import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart.component';
 import { ItemCartDataService } from './services/item-cart-data.service';
 import { ProductsService } from './services/products.service';
+import { ShoppingcartService } from './services/shoppingcart.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ProductsService } from './services/products.service';
   ],
   providers: [
   ItemCartDataService,
-  ProductsService
+  ProductsService,
+  ShoppingcartService
   ],
   bootstrap: [AppComponent]
 })
