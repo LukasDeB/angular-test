@@ -16,8 +16,7 @@ export class ShoppingcartService {
    	let cart = new Cart();
       if(localCart){
         cart = JSON.parse(localCart);
-      }else{
-        cart = new Cart();
+      } else {
         cart.cartItems = [];
         cart.total = 0;
         this.updateCart(cart);
